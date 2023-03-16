@@ -22,11 +22,11 @@ describe('Search for brokers', () => {
           cy.log('As it is required the address is present:', address.text())
         })
         cy.log('Verify if the number of properties assigned to the broker are displayed.')
-        cy.get('div.position a').should('be.visible').then((data) => { cy.log('properties', data.text()) })
+        cy.get('div.position a').should('be.visible').then((data) => { cy.log('As it is required the number of properties is present', data.text()) })
         cy.get('span.tel a').should('be.visible').then((data) => {
           const str = data.text();
           if (str.indexOf('+') !== str.lastIndexOf('+')) {
-            cy.log("As it's required we have two phone numbers avaiable", str)
+            cy.log("As it's required we have two phone numbers available", str)
           }
         })
       });
